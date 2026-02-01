@@ -1,0 +1,585 @@
+/*--- DATAVERSE-X PREMIUM THEME ---*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-dark: #050505;
+  --sidebar-glass: rgba(20, 20, 25, 0.75);
+  --input-glass: rgba(30, 30, 35, 0.8);
+  --primary-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+  --text-main: #E2E8F0;
+  --text-muted: #94A3B8;
+  --border-light: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-dark);
+  /* Modern Deep Space Background */
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.08), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(65, 22, 165, 0.08), transparent 25%);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.app-container { display: flex; height: 100vh; width: 100vw; }
+
+/* --- 1. LOGIN SCREEN FIX (YE ZAROORI HAI) --- */
+.login-container {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  background-color: #050505;
+  z-index: 9999; /* Sab se upar */
+}
+
+/* ... (Baqi CSS wese hi rahegi, sirf Login wala hissa replace karein) ... */
+
+/* --- 1. PROFESSIONAL LOGIN SCREEN (OUTSTANDING DESIGN) --- */
+.login-container {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  background-color: #050505;
+  /* Cinematic Background */
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.2) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.2) 0%, transparent 40%);
+  z-index: 9999;
+}
+
+.login-box {
+  /* Premium Glass Card */
+  background: rgba(25, 25, 30, 0.6);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  padding: 10px 10px;
+  border-radius: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  max-width: 400px;
+  width: 70%;
+  display: flex; flex-direction: column; align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.login-box:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.3);
+  box-shadow: 0 30px 80px rgba(56, 189, 248, 0.15);
+}
+
+.login-logo {
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(56, 189, 248, 0.6);
+  margin-bottom: 25px;
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.4);
+  padding: 4px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+/* --- USER PROFILE (UPDATED DESIGN) --- */
+.user-profile {
+  margin-top: auto; 
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.03); /* Glass Effect */
+  border: 1px solid var(--border-color);
+  border-radius: 12px; 
+  display: flex; 
+  align-items: center; 
+  gap: 12px;
+  cursor: default;
+  transition: all 0.2s ease;
+}
+
+.user-profile:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent); /* Hover par Blue Border */
+}
+
+/* User Image Fix */
+.user-avatar {
+  width: 38px;       /* Chota Size */
+  height: 38px;      /* Chota Size */
+  border-radius: 50%; /* Bilkul Gol */
+  object-fit: cover;  /* Tasveer Pichkay gi nahi */
+  border: 2px solid var(--accent); /* Blue Ring */
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+.user-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.user-info h4 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.user-info p {
+  margin: 0;
+  font-size: 11px;
+  color: var(--accent);
+  margin-top: 2px;
+}
+
+/* Logout Button Design */
+.logout-btn {
+  background: transparent;
+  border: none;
+  color: #ff4d4d; /* Red Color */
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 2px;
+  text-align: left;
+}
+.logout-btn:hover { text-decoration: underline; }
+
+.login-box h1 {
+  font-size: 32px; font-weight: 800; margin: 0 0 10px 0;
+  /*background: linear-gradient(to right, #fff, #94a3b8);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;*/
+  .your-class-selector {
+     
+    background: linear-gradient(135deg, blue, purple); 
+    
+   /* 2. یہ لائن وارننگ ختم کرنے کے لیے ضروری ہے */
+    -webkit-background-clip: text;
+    background-clip: text;  /* <-- یہ لائن ایڈ (Add) کریں */
+    
+    /* 3. ٹیکسٹ کا رنگ شفاف (Transparent) کریں */
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+}
+
+.login-box p {
+  color: #94a3b8; margin-bottom: 40px; font-size: 16px; font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Google Button */
+.google-btn {
+  background: rgb(231, 216, 216); color: #1e293b;
+  width: 100%; padding: 10px;
+  border-radius: 30px; font-weight: 700; font-size: 16px;
+  cursor: pointer; border: none;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(255,255,255,0.1);
+}
+
+.google-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px rgba(255,255,255,0.25);
+  background: #f8fafc;
+}
+
+/* --- PROFESSIONAL GUEST BUTTON --- */
+.guest-btn {
+  background: transparent;
+  color: #94a3b8;
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #334155;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.guest-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border-color: #475569;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.login-footer {
+  margin-top: 35px; font-size: 12px !important; color: #64748b;
+  letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.7;
+}
+
+/* ... (Baqi CSS wese hi rahegi) ... */
+/* --- SIDEBAR --- */
+.sidebar {
+  width: 280px;
+  background: var(--sidebar-glass);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid var(--border-light);
+  display: flex; flex-direction: column; padding: 24px;
+  z-index: 20; transition: 0.3s;
+}
+.sidebar.closed { margin-left: -290px; opacity: 0; }
+
+/* Header & Logo */
+.sidebar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.logo-container { display: flex; align-items: center; gap: 12px; }
+
+/* SIDEBAR LOGO (Small & Round) */
+.app-logo { width: 35px; height: 35px; border-radius: 50%; object-fit: cover; border: 2px solid #38bdf8; box-shadow: 0 0 10px rgba(56, 189, 248, 0.4); }
+
+.brand { font-size: 20px; font-weight: 700; background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text;background-clip: text; -webkit-text-fill-color: transparent; }
+.menu-btn { background: transparent; border: none; color: var(--text-muted); cursor: pointer; }
+
+/* --- PROFESSIONAL NEW PROJECT BUTTON (Replace Old One) --- */
+.new-chat-btn {
+  /* Premium Blue Gradient */
+  background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 16px; /* Smooth Corners */
+  
+  /* Text Style */
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  
+  /* Flex Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth Animation */
+  
+  /* Default Glow */
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effect (Jab mouse upar aye) */
+.new-chat-btn:hover {
+  transform: translateY(-2px) scale(1.02); /* Thora sa upar uthega */
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.6); /* Tez chamak */
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+}
+
+/* Click Effect (Jab dabayein) */
+.new-chat-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.3);
+}
+.history { flex: 1; margin-top: 30px; overflow-y: auto; }
+.history-label { font-size: 11px; font-weight: 700; color: #64748b; margin-bottom: 12px; }
+.history-item { padding: 10px 12px; font-size: 14px; color: var(--text-muted); border-radius: 10px; cursor: pointer; transition: 0.2s; display: flex; align-items: center; gap: 10px; }
+.history-item:hover { background: rgba(255, 255, 255, 0.05); color: white; }
+.bottom-info { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border-light); font-size: 12px; color: var(--text-muted); text-align: center; }
+
+/* --- MAIN CHAT --- */
+/* --- MAIN CHAT AREA (WITH BACKGROUND IMAGE) --- */
+/* --- RESPONSIVE BACKGROUND FIX --- */
+/* --- 2. MAIN CHAT AREA (BACKGROUND FIX) --- */
+.main-chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  
+  /* --- PROFESSIONAL BACKGROUND --- */
+  /* Yahan apni image ka URL dalein. Agar local file hai to url('/bg.jpg') likhein */
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.095)), /* Dark Overlay taake text parha jaye */
+    url('bg.jpg');
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Top Bar (Hamburger Menu) */
+.top-bar {
+  padding: 15px 20px;
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 50; /* Z-index barha diya taake click ho sake */
+}
+.top-bar button {
+  background: rgba(0,0,0,0.5);
+  border-radius: 8px;
+  padding: 8px;
+  border: 1px solid #333;
+  color: white;
+}
+
+/* Chat Box */
+.chat-box {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 15% 120px 15%; /* Desktop Padding */
+  display: flex; flex-direction: column; gap: 20px;
+}
+
+
+/* MESSAGES */
+.message-row { display: flex; gap: 20px; line-height: 1.7; animation: fadeIn 0.4s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.avatar { width: 38px; height: 38px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.user-avatar { background: var(--primary-gradient); color: white; }
+.ai-avatar { background: #1e293b; color: #a78bfa; border: 1px solid var(--border-light); }
+.sender-name { font-size: 13px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; }
+.message-content { font-size: 16px; color: #f1f5f9; }
+pre { background: #0f172a !important; border-radius: 12px; padding: 16px; overflow-x: auto; border: 1px solid #334155; }
+
+/* --- WELCOME SCREEN (SMALLER LOGO HERE) --- */
+.welcome-container {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  height: 100%; color: #E3E3E3; margin-top: -50px; text-align: center;
+}
+.welcome-logo {
+  width: 50px;  /* Chota kar diya */
+  height: 50px; /* Chota kar diya */
+  border-radius: 50%; /* Bilkul Gol */
+  object-fit: cover;
+  border: 2px solid #38bdf8;
+  margin-bottom: 20px;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.3); /* Glow kam kiya */
+}
+.welcome-title {
+  font-size: 32px; font-weight: 800; margin-bottom: 10px;
+  background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text;background-clip: text; -webkit-text-fill-color: transparent;
+}
+.welcome-sub { font-size: 16px; color: #888; }
+
+
+/* --- PROFESSIONAL SETTINGS MODAL --- */
+.settings-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Darker Overlay */
+  backdrop-filter: blur(10px);    /* Blur Effect */
+  z-index: 1000;
+  display: flex; align-items: center; justify-content: center;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.settings-box {
+  background: #18181b; /* Zinc-900 */
+  width: 450px;
+  border: 1px solid #333;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+.settings-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #27272a;
+  display: flex; justify-content: space-between; align-items: center;
+  background: #202023;
+}
+.settings-header h3 { margin: 0; font-size: 16px; color: white; display: flex; align-items: center; gap: 10px; font-weight: 600; }
+
+.settings-content { padding: 24px; display: flex; flex-direction: column; gap: 20px; }
+
+.setting-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #27272a;
+}
+.setting-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+.setting-label { display: flex; flex-direction: column; gap: 4px; }
+.setting-title { font-size: 14px; color: #f1f5f9; font-weight: 500; }
+.setting-desc { font-size: 12px; color: #94a3b8; }
+
+.setting-action {
+  background: #27272a; border: 1px solid #3f3f46;
+  color: #e2e8f0; padding: 8px 16px; border-radius: 10px;
+  cursor: pointer; transition: 0.2s; display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500;
+}
+.setting-action:hover { background: #3f3f46; border-color: #38bdf8; color: white; }
+
+.close-icon-btn {
+  background: transparent; border: none; color: #94a3b8; cursor: pointer; transition: 0.2s;
+}
+.close-icon-btn:hover { color: white; transform: rotate(90deg); }
+/* --- INPUT AREA --- */
+.input-area { position: absolute; bottom: 0; width: 75%; padding: 20px 18% 10px 15%; background: linear-gradient(to top, var(--bg-dark) 80%, transparent); display: flex; flex-direction: column; align-items: center; z-index: 10; }
+.input-wrapper { width: 90%; background: var(--input-glass); backdrop-filter: blur(15px); border: 1px solid var(--border-light); border-radius: 40px; display: flex; align-items: center; padding: 10px 12px 10px 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); transition: 0.3s; }
+.input-wrapper:focus-within { border-color: #6366f1; box-shadow: 0 10px 40px rgba(99, 102, 241, 0.15); }
+.plus-btn { background: #334155; color: white; border: none; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; margin-right: 14px; transition: 0.2s; }
+.plus-btn:hover { background: #6366f1; transform: rotate(90deg); }
+.chat-input { flex: 1; background: transparent; border: none; color: white; font-size: 16px; outline: none; height: 28px; }
+.icon-btn { background: transparent; border: none; color: #94a3b8; padding: 8px; margin-right: 4px; cursor: pointer; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+.icon-btn:hover { color: #38bdf8; background: rgba(255,255,255,0.05); }
+.send-btn { background: transparent; border: none; color: #64748b; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+.send-btn.active { background: white; color: black; box-shadow: 0 0 15px rgba(255,255,255,0.3); }
+.footer-text { font-size: 11px; color: #475569; margin-top: 16px; opacity: 0.8; }
+.typing span { display: inline-block; width: 6px; height: 6px; background: #a78bfa; border-radius: 50%; margin-right: 4px; animation: bounce 1.4s infinite; }
+.typing span:nth-child(2) { animation-delay: 0.2s; } .typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+/* --- MOBILE RESPONSIVENESS (Paste at the bottom) --- */
+
+/* 1. Mobile Sidebar (Hidden by default) */
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    left: 0; top: 0;
+    height: 100vh;
+    width: 85%; /* Thora chota taake peeche click ho sake */
+    box-shadow: 10px 0 50px rgba(0,0,0,0.8);
+    transform: translateX(0);
+  }
+  
+  .sidebar.closed {
+    margin-left: -100%; /* Poora bahar */
+    transform: translateX(-100%);
+  }
+
+  /* 2. Main Chat Full Width */
+  .main-chat {
+    width: 100%;
+  }
+
+  /* 3. Top Menu Button Visible */
+  .top-bar {
+    display: block;
+    padding: 10px;
+  }
+
+/* --- CHAT BOX SPACING FIX --- */
+.chat-box {
+  padding: 20px 5% 120px 5%;
+}
+
+
+  /* 5. Input Area Adjustent */
+  .input-area {
+    padding: 15px 5% 20px 5%;
+  }
+  
+  .input-wrapper {
+    padding: 8px 10px;
+  }
+  
+  /* Hide extra icons on very small screens if needed */
+  .icon-btn {
+    padding: 5px;
+  }
+}
+/* --- PROFESSIONAL CHAT LAYOUT --- */
+
+/* Common Row Style */
+.message-row {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+/* User Message (Right Side) */
+.user-row {
+  flex-direction: row-reverse; /* Avatar right side par */
+  justify-content: flex-start;
+}
+
+.user-row .message-content {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8); /* Blue Gradient */
+  color: white;
+  border-radius: 18px 4px 18px 18px; /* Top-right corner sharp */
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.user-row .sender-name {
+  text-align: right;
+  color: #bfdbfe;
+}
+
+/* AI Message (Left Side) */
+.ai-row {
+  flex-direction: row; /* Avatar left side par */
+  justify-content: flex-start;
+}
+
+.ai-row .message-content {
+  background: #1e1e20; /* Dark Grey */
+  color: #e2e8f0;
+  border: 1px solid #333;
+  border-radius: 4px 18px 18px 18px; /* Top-left corner sharp */
+}
+
+.ai-row .sender-name {
+  text-align: left;
+  color: #38bdf8; /* Neon Blue Name */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Common Bubble Styling */
+.message-content {
+  max-width: 75%; /* Message zyada failay na */
+  padding: 15px 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.chat-image {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.voice-btn {
+  background: transparent;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+}
+.voice-btn:hover { color: #38bdf8; }
+/* --- SCROLLBAR FIX (NO WHITE LINES) --- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Picha clear */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333; /* Dark Grey Dandi */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Hover par thora light */
+}
+/* --- FOOTER TEXT STYLE --- */
+.footer-text {
+  text-align: center;
+  font-size: 11px;
+  color: #64748b; /* Muted Grey */
+  margin-top: 10px;
+  opacity: 0.8;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
