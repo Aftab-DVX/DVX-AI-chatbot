@@ -10,7 +10,7 @@ import ReactMarkdown from 'react-markdown';
 import logo from './logo.jpg'; 
 import axios from 'axios';
 import Papa from 'papaparse';
-import * as pdfjsLib from 'pdfjs-dist/build/pdf';
+import * as pdfjsLib from 'pdfjs-dist';
 import { createClient } from '@supabase/supabase-js';
 import { 
   Send, Plus, User, Sparkles, Menu, Image as ImageIcon, Mic, X, 
