@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css'; 
-// import ReactMarkdown from 'react-markdown'; 
+import ReactMarkdown from 'react-markdown'; 
 import logo from './logo.jpg'; 
 import axios from 'axios';
 import Papa from 'papaparse';
