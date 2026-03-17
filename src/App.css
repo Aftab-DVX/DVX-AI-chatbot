@@ -648,3 +648,73 @@ pre { background: #0f172a !important; border-radius: 12px; padding: 16px; overfl
   font-weight: 500;
   letter-spacing: 0.5px;
 }
+/* =========================================================
+   🚀 MOBILE RESPONSIVENESS (Jadu Yahan Hai)
+   ========================================================= */
+@media screen and (max-width: 768px) {
+  .app-container {
+    position: relative;
+  }
+  
+  /* Sidebar ab screen ke upar slide karega */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: var(--sidebar-glass);
+    backdrop-filter: blur(10px); 
+  }
+
+  /* Jab sidebar band ho to screen se bahar nikal jaye */
+  .sidebar.closed {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+  }
+
+  /* Chat Box ki padding choti karein */
+  .chat-box {
+    padding: 15px;
+  }
+  
+  .message-row {
+    gap: 10px;
+  }
+  
+  .ai-row {
+    padding: 15px 10px;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Input area mobile par neechay chipka rahay */
+  .input-area {
+    padding: 15px;
+  }
+
+  .welcome-title {
+    font-size: 24px;
+  }
+
+  /* Data Lab & Market Watch Mobile Fixes */
+  div[style*="padding: 30px"], 
+  div[style*="padding: '30px'"],
+  div[style*="padding: 40px"], 
+  div[style*="padding: '40px'"] {
+    padding: 15px !important;
+  }
+
+  h1 { font-size: 22px !important; }
+  h2 { font-size: 20px !important; }
+  h3 { font-size: 16px !important; }
+}
+
+
