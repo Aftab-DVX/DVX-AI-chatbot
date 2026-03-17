@@ -649,72 +649,175 @@ pre { background: #0f172a !important; border-radius: 12px; padding: 16px; overfl
   letter-spacing: 0.5px;
 }
 /* =========================================================
-   🚀 MOBILE RESPONSIVENESS (Jadu Yahan Hai)
+   📱 PRO MOBILE APP UI (Native Feel - WhatsApp/ChatGPT Style)
    ========================================================= */
 @media screen and (max-width: 768px) {
-  .app-container {
-    position: relative;
+  /* 1. App Container Lockdown */
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; 
+    position: fixed; 
   }
   
-  /* Sidebar ab screen ke upar slide karega */
+  .app-container {
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .main-chat {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 2. Glassmorphic Sticky Header */
+  .top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(5, 5, 5, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* 3. Professional Sidebar */
   .sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    bottom: 0;
+    height: 100%;
+    width: 80%;
+    max-width: 320px;
     z-index: 999;
-    background: var(--sidebar-glass);
-    backdrop-filter: blur(10px); 
+    background: #141416;
+    box-shadow: 20px 0 50px rgba(0,0,0,0.8);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Jab sidebar band ho to screen se bahar nikal jaye */
-  .sidebar.closed {
-    transform: translateX(-100%);
+  .sidebar.closed { transform: translateX(-105%); }
+  .sidebar.open { transform: translateX(0); }
+
+  /* 🔥 NEW: Hide ALL Scrollbars GLOBALLY on Mobile 🔥 */
+  *::-webkit-scrollbar {
+    display: none !important;
+  }
+  * {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
   }
 
-  .sidebar.open {
-    transform: translateX(0);
-    box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+  .user-profile {
+    padding-bottom: calc(20px + env(safe-area-inset-bottom)) !important;
+    margin-bottom: 10px;
   }
 
-  /* Chat Box ki padding choti karein */
+  /* 4. Chat Area & Welcome Screen Fixes */
   .chat-box {
-    padding: 15px;
-  }
-  
-  .message-row {
-    gap: 10px;
-  }
-  
-  .ai-row {
-    padding: 15px 10px;
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; 
+    padding: 15px 15px 100px 15px; 
   }
 
-  .avatar {
-    width: 30px;
-    height: 30px;
+  .welcome-container { margin-top: 5vh; }
+  .welcome-title { font-size: 26px; }
+  
+  /* Visible Dark Buttons Fix */
+  .welcome-container > div {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    margin-top: 20px !important;
+  }
+  
+  .welcome-container button, .suggestion-chip {
+    font-size: 13px !important;
+    padding: 10px 16px !important;
+    background: rgba(15, 15, 18, 0.85) !important; 
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #fff !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
   }
 
-  /* Input area mobile par neechay chipka rahay */
+  /* 5. Chat Bubbles */
+  .message-row { gap: 8px; margin-bottom: 15px; }
+  
+  .ai-row { 
+    padding: 12px; 
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(5px);
+    border-radius: 12px 12px 12px 2px; 
+  }
+  
+  .user-row { justify-content: flex-end; }
+  .user-row .message-content { 
+    background: #2a2a2c; 
+    padding: 12px 16px; 
+    border-radius: 16px 16px 2px 16px; 
+  }
+  
+  .avatar { width: 28px; height: 28px; }
+  .message-content { width: 100%; font-size: 15px; }
+  .user-row .avatar { display: none; } 
+
+  /* 6. Sticky Bottom Input Area (🔥 ALIGNMENT FIXED 🔥) */
   .input-area {
-    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* width: 100%; hataya taake overflow na ho */
+    box-sizing: border-box !important;
+    padding: 10px 15px; 
+    padding-bottom: calc(10px + env(safe-area-inset-bottom)); 
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 100;
   }
 
-  .welcome-title {
-    font-size: 24px;
+  .footer-text {
+    display: none !important;
   }
 
-  /* Data Lab & Market Watch Mobile Fixes */
+  .input-wrapper {
+    width: 100%;
+    box-sizing: border-box !important;
+    margin: 0 auto; /* Perfect center */
+    padding: 6px 10px;
+    border-radius: 24px;
+    background: rgba(30, 30, 35, 0.9);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .chat-input { 
+    font-size: 16px !important; 
+    padding: 8px 0;
+  }
+
+  .send-btn { width: 34px; height: 34px; border-radius: 50%; }
+
+  /* 7. Data Lab & Market Watch Mobile Fixes */
   div[style*="padding: 30px"], 
   div[style*="padding: '30px'"],
   div[style*="padding: 40px"], 
   div[style*="padding: '40px'"] {
     padding: 15px !important;
+    padding-bottom: 100px !important; 
   }
 
-  h1 { font-size: 22px !important; }
+  .recharts-responsive-container { min-height: 250px !important; }
+
+  h1 { font-size: 24px !important; }
   h2 { font-size: 20px !important; }
-  h3 { font-size: 16px !important; }
 }
-
-
