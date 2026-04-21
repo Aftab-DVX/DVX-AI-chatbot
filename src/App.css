@@ -778,7 +778,7 @@ pre {
   display: none;
   position: fixed; inset: 0;
   background: rgba(0,0,0,0.5);
-  z-index: 19;
+  z-index: 490;   /* Sidebar (500) se neeche, input (50) se upar */
   backdrop-filter: blur(2px);
 }
 .sidebar-backdrop.visible { display: block; }
@@ -835,7 +835,7 @@ pre {
     width: 78%;
     max-width: 280px;
     height: 100%;
-    z-index: 200;
+    z-index: 500;
     background: #1c1c1e;
     box-shadow: 6px 0 32px rgba(0,0,0,0.7);
     /* open by default = transform(0) */
@@ -897,7 +897,7 @@ pre {
     padding: 8px 14px calc(10px + env(safe-area-inset-bottom)) !important;
     background: linear-gradient(180deg, transparent 0%, #0d0d0d 25%) !important;
     border-top: none !important;
-    z-index: 9999 !important;
+    z-index: 50 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: stretch !important; /* Desktop ka center override */
@@ -1086,4 +1086,70 @@ pre {
   .welcome-title { font-size: 26px; }
   .welcome-sub   { font-size: 22px; }
   .chat-box { padding: 12px 12px 20px; }
+}
+@media (min-width: 768px) {
+  .sidebar-backdrop {
+    display: none !important; /* Desktop par backdrop hide kar dein */
+  }
+}
+/* Sidebar کے لے آؤٹ کو درست کرنے کے لیے */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Guest User پروفائل کو اوپر رکھنے کے لیے */
+.user-profile {
+    order: 1;
+    margin-top: auto; /* یہ باقی چیزوں کو اوپر دھکیل دے گا */
+}
+
+/* DVX Version (bottom-info) کو سب سے نیچے کرنے کے لیے */
+.bottom-info {
+    order: 2;
+    padding-top: 5px; /* تھوڑا فاصلہ دینے کے لیے */
+    margin-bottom: -10px; /* نیچے سے تھوڑا اوپر کرنے کے لیے */
+    text-align: center;
+    font-size: 11px;
+    opacity: 0.7;
+}
+.bottom-info {
+    font-size: 10px !important;    /* ٹیکسٹ کا سائز مزید چھوٹا کرنے کے لیے */
+    opacity: 0.5 !important;      /* اس کو تھوڑا ہلکا (dim) کرنے کے لیے */
+    letter-spacing: 0.5px;       /* حروف کے درمیان تھوڑی جگہ دینے کے لیے */
+    padding-top: 1px !important;  /* اوپر سے فاصلہ کم کرنے کے لیے */
+}
+/* موبائل ویو کے لیے اسپیشل کوڈ */
+@media screen and (max-width: 768px) {
+    /* وہ کنٹینر جس میں Analyze Data اور Generate Ideas وغیرہ ہیں */
+    .welcome-container > div {
+        display: flex !important;
+        flex-wrap: wrap !important; /* اس سے بٹن دوسری لائن میں جائیں گے */
+        justify-content: center !important; /* بٹنز کو درمیان میں کرنے کے لیے */
+        gap: 10px !important; /* بٹنز کے درمیان فاصلہ */
+    }
+
+    .suggestion-chip {
+        flex: 0 1 auto; /* بٹنز کو ضرورت کے مطابق پھیلنے دیں */
+        white-space: nowrap; /* ٹیکسٹ کو ایک ہی لائن میں رکھنے کے لیے */
+        font-size: 13px !important; /* موبائل پر سائز تھوڑا چھوٹا */
+    }
+}
+
+/* موبائل ویو پر لوگو دکھانے کے لیے */
+@media screen and (max-width: 760px) {
+    .welcome-logo {
+        display: block !important; /* لوگو کو ظاہر کرنے کے لیے */
+        width: 50px !important;    /* موبائل کے حساب سے سائز (آپ اسے بدل سکتے ہیں) */
+        height: auto !important;
+        margin: 0 auto 15px auto !important; /* درمیان میں کرنے اور نیچے سے فاصلہ دینے کے لیے */
+    }
+
+    .welcome-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; /* تمام چیزوں کو درمیان میں رکھنے کے لیے */
+        text-align: center !important;
+        padding-top: 10px !important; /* اوپر سے تھوڑی جگہ */
+    }
 }
